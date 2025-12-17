@@ -34,7 +34,7 @@ public class HistoryActivity extends AppCompatActivity {
         //load history
         loadHistory();
 
-        // Set back button listener
+        //set back button listener
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
