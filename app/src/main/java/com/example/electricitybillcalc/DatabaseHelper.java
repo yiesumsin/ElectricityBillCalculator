@@ -151,4 +151,66 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
+    public boolean deleteBill(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int result = db.delete(TABLE_NAME, COLUMN_ID + " = ?",
+                new String[]{String.valueOf(id)});
+        db.close();
+        return result > 0;
+    }
+
+    public boolean updateBill(int id, int year, String month, double units, double rebate) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        // Recalculate charges based on updated units
+        double totalCharges = calculateCharges(units);
+        double finalCost = totalCharges - (totalCharges * rebate / 100);
+
+        values.put(COLUMN_YEAR, year);
+        values.put(COLUMN_MONTH, month);
+        values.put(COLUMN_UNITS, units);
+        values.put(COLUMN_REBATE, rebate);
+        values.put(COLUMN_TOTAL_CHARGES, totalCharges);
+        values.put(COLUMN_FINAL_COST, finalCost);
+
+        int result = db.update(TABLE_NAME, values,
+                COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
+        db.close();
+        return result > 0;
+    }
+
+    // Add this helper method for calculation
+    private double calculateCharges(double units) {
+        double remaining = units;
+        double total = 0.0;
+
+        // Block 1: First 200 kWh
+        if (remaining > 0) {
+            double block1 = Math.min(remaining, 200.0);
+            total += block1 * 0.218;
+            remaining -= block1;
+        }
+
+        // Block 2: Next 100 kWh
+        if (remaining > 0) {
+            double block2 = Math.min(remaining, 100.0);
+            total += block2 * 0.334;
+            remaining -= block2;
+        }
+
+        // Block 3: Next 300 kWh
+        if (remaining > 0) {
+            double block3 = Math.min(remaining, 300.0);
+            total += block3 * 0.516;
+            remaining -= block3;
+        }
+
+        // Block 4: Above 600 kWh
+        if (remaining > 0) {
+            total += remaining * 0.546;
+        }
+
+        return total;
+    }
 }

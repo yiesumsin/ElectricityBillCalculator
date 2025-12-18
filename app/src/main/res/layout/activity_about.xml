@@ -6,6 +6,7 @@
     android:background="@color/purple_light"
     android:padding="16dp">
 
+    <!-- ScrollView can have ONLY ONE direct child - a container LinearLayout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -66,6 +67,17 @@
                     android:textColor="@color/purple_dark"
                     android:layout_marginBottom="20dp"/>
 
+                <!-- Student Picture -->
+                <ImageView
+                    android:id="@+id/studentPicture"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/ic_student_placeholder"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:background="@color/gray_light"
+                    android:layout_marginBottom="20dp"/>
+
                 <!-- Full Name -->
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -85,7 +97,7 @@
                         android:id="@+id/studentName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="YOUR NAME"
+                        android:text="NAME"
                         android:textSize="16sp"/>
                 </LinearLayout>
 
@@ -108,7 +120,7 @@
                         android:id="@+id/studentId"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="YOUR_ID"
+                        android:text="STUDENTID"
                         android:textSize="16sp"/>
                 </LinearLayout>
 
@@ -131,7 +143,7 @@
                         android:id="@+id/courseCode"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="CSC584"
+                        android:text="ICT602"
                         android:textSize="16sp"/>
                 </LinearLayout>
 
@@ -158,6 +170,24 @@
                         android:textSize="16sp"/>
                 </LinearLayout>
 
+                <!-- Instructions Section -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📱 How to Use This App"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="@color/purple_dark"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. Select Month and Year\n2. Enter electricity units used (kWh)\n3. Choose rebate percentage (0-5%)\n4. Click CALCULATE BILL\n5. Click SAVE TO HISTORY to store\n6. View saved bills in VIEW HISTORY\n7. Click any bill to view/edit/delete details\n8. All data is stored locally on your device"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginBottom="20dp"/>
+
                 <!-- GitHub Link -->
                 <TextView
                     android:id="@+id/githubLink"
@@ -179,7 +209,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
+            app:cardElevation="4dp"
+            android:layout_marginBottom="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -199,7 +230,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="All rights reserved"
+                    android:text="All rights reserved. Developed for educational purposes."
                     android:textSize="12sp"
                     android:gravity="center"
                     android:textColor="@color/gray_dark"/>
@@ -213,7 +244,7 @@
             android:layout_height="55dp"
             android:text="BACK TO CALCULATOR"
             android:textSize="18sp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             android:backgroundTint="@color/purple_dark"/>
     </LinearLayout>
 </ScrollView>

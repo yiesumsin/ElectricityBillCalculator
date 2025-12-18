@@ -4,6 +4,7 @@ package com.example.electricitybillcalc;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,6 +17,15 @@ public class AboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
+        View rootView = findViewById(android.R.id.content);
+        rootView.setPadding(0, getActionBarHeight(), 0, 0);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("⚡ Electricity Bill Calculator");
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setLogo(R.drawable.ic_app_logo);
+            getSupportActionBar().setDisplayUseLogoEnabled(false);
+        }
 
         TextView studentName = findViewById(R.id.studentName);
         TextView studentId = findViewById(R.id.studentId);
@@ -25,9 +35,9 @@ public class AboutActivity extends AppCompatActivity {
         Button aboutBackButton = findViewById(R.id.aboutBackButton);
 
         //my details
-        studentName.setText("Muhammad Syuhairy bin Mohd Hatta");
+        studentName.setText("Muhammad Syuhairy \nbin Mohd Hatta");
         studentId.setText("2023492222");
-        courseCode.setText("CSC584");
+        courseCode.setText("ICT602");
         courseName.setText("Mobile Technology");
 
         //github link
@@ -46,5 +56,12 @@ public class AboutActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    private int getActionBarHeight() {
+        TypedValue tv = new TypedValue();
+        if (getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
+            return TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
+        }
+        return 0;
     }
 }

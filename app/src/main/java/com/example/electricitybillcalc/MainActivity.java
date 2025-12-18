@@ -3,6 +3,7 @@ package com.example.electricitybillcalc;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -46,6 +47,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        View rootView = findViewById(android.R.id.content);
+        rootView.setPadding(0, getActionBarHeight(), 0, 0);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("⚡ Electricity Bill Calculator");
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+            getSupportActionBar().setDisplayUseLogoEnabled(false);
+        }
+
+
 
         //initialize database helper
         dbHelper = new DatabaseHelper(this);
@@ -287,7 +300,7 @@ public class MainActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle("Clear All Data")
                 .setMessage("Are you sure you want to clear all saved bills? This action cannot be undone.")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Clear", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         int rowsDeleted = dbHelper.deleteAllBills();
@@ -295,7 +308,7 @@ public class MainActivity extends AppCompatActivity {
                                 "Cleared " + rowsDeleted + " records", Toast.LENGTH_SHORT).show();
                     }
                 })
-                .setNegativeButton("No", null)
+                .setNegativeButton("Cancel", null)
                 .setIcon(android.R.drawable.ic_menu_delete)
                 .show();
     }
@@ -304,5 +317,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         dbHelper.close();
         super.onDestroy();
+    }
+    private int getActionBarHeight() {
+        TypedValue tv = new TypedValue();
+        if (getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
+            return TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
+        }
+        return 0;
     }
 }

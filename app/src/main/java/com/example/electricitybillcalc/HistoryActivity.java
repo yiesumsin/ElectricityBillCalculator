@@ -3,6 +3,7 @@ package com.example.electricitybillcalc;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -24,6 +25,17 @@ public class HistoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+
+        View rootView = findViewById(android.R.id.content);
+        rootView.setPadding(0, getActionBarHeight(), 0, 0);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("⚡ Electricity Bill Calculator");
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+            getSupportActionBar().setDisplayUseLogoEnabled(false);
+        }
+
 
         historyListView = findViewById(R.id.historyListView);
         emptyTextView = findViewById(R.id.emptyTextView);
@@ -73,5 +85,12 @@ public class HistoryActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         loadHistory(); //refresh list when returning from detail
+    }
+    private int getActionBarHeight() {
+        TypedValue tv = new TypedValue();
+        if (getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
+            return TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
+        }
+        return 0;
     }
 }

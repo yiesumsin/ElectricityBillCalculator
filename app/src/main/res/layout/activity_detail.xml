@@ -197,6 +197,31 @@
                         android:textColor="@color/red"/>
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+
+                    <Button
+                        android:id="@+id/editButton"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="EDIT BILL"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="@color/blue"/>
+
+                    <Button
+                        android:id="@+id/deleteButton"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="DELETE BILL"
+                        android:layout_marginStart="8dp"
+                        android:backgroundTint="@color/red_dark"/>
+                </LinearLayout>
+
                 <!-- Calculation Notes -->
                 <TextView
                     android:layout_width="match_parent"
