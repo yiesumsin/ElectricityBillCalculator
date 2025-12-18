@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/purple_light"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Current Values Display -->
+        <TextView
+            android:id="@+id/currentValuesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current Values:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:padding="12dp"
+            android:background="@color/blue_dark"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Month Selection -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Month:"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp"/>
+
+        <Spinner
+            android:id="@+id/editMonthSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_bg"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Year Selection -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Year:"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp"/>
+
+        <Spinner
+            android:id="@+id/editYearSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_bg"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Units Input -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Electricity Units Used (kWh):"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/editUnitsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="numberDecimal"
+            android:hint="Enter units (e.g., 250)"
+            android:background="@drawable/edittext_bg"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Rebate Selection -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rebate Percentage (0-5%):"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/editRebateRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <RadioButton
+                android:id="@+id/editRadio0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0%"
+                android:textColor="@color/white"/>
+
+            <RadioButton
+                android:id="@+id/editRadio1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1%"
+                android:textColor="@color/white"/>
+
+            <RadioButton
+                android:id="@+id/editRadio2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2%"
+                android:textColor="@color/white"/>
+
+            <RadioButton
+                android:id="@+id/editRadio3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3%"
+                android:textColor="@color/white"/>
+
+            <RadioButton
+                android:id="@+id/editRadio4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4%"
+                android:textColor="@color/white"/>
+
+            <RadioButton
+                android:id="@+id/editRadio5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5%"
+                android:textColor="@color/white"/>
+        </RadioGroup>
+
+        <!-- Error Message -->
+        <TextView
+            android:id="@+id/editErrorMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"/>
+    </LinearLayout>
+</ScrollView>
