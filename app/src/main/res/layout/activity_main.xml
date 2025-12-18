@@ -288,21 +288,21 @@
 
             <Button
                 android:id="@+id/saveButton"
-                android:layout_width="0dp"
+                android:layout_width="10dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="SAVE TO HISTORY"
-                android:textSize="16sp"
+                android:textSize="13sp"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="@color/blue"/>
 
             <Button
                 android:id="@+id/viewHistoryButton"
-                android:layout_width="0dp"
+                android:layout_width="10dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="VIEW HISTORY"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:layout_marginStart="8dp"
                 android:backgroundTint="@color/orange"/>
         </LinearLayout>
@@ -315,7 +315,7 @@
 
             <Button
                 android:id="@+id/aboutButton"
-                android:layout_width="0dp"
+                android:layout_width="10dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="ABOUT"
@@ -325,7 +325,7 @@
 
             <Button
                 android:id="@+id/clearButton"
-                android:layout_width="0dp"
+                android:layout_width="10dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="CLEAR ALL"
