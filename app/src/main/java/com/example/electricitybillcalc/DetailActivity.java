@@ -143,7 +143,7 @@ public class DetailActivity extends AppCompatActivity {
         monthAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         monthSpinner.setAdapter(monthAdapter);
 
-        // Setup year spinner (similar to MainActivity)
+
         List<Integer> years = new ArrayList<>();
         int currentYear = Calendar.getInstance().get(Calendar.YEAR);
         for (int year = 2020; year <= currentYear + 1; year++) {
@@ -156,7 +156,7 @@ public class DetailActivity extends AppCompatActivity {
         yearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         yearSpinner.setAdapter(yearAdapter);
 
-        // Set current values
+
         DecimalFormat df = new DecimalFormat("#,##0.00");
         currentValuesTextView.setText(String.format(
                 "Current Values:\nMonth: %s\nYear: %d\nUnits: %s kWh\nRebate: %.0f%%\nTotal: RM %s\nFinal: RM %s",
@@ -168,7 +168,7 @@ public class DetailActivity extends AppCompatActivity {
                 df.format(currentBill.getFinalCost())
         ));
 
-        // Pre-fill current values
+
         // Set month
         for (int i = 0; i < months.length; i++) {
             if (months[i].equals(currentBill.getMonth())) {

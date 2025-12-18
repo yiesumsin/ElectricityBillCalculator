@@ -180,7 +180,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result > 0;
     }
 
-    // Add this helper method for calculation
     private double calculateCharges(double units) {
         double remaining = units;
         double total = 0.0;
