@@ -37,7 +37,7 @@ An Android application for calculating monthly electricity bills based on TNB bl
 ## Developer
 - Name: Muhammad Syuhairy bin Mohd Hatta
 - Student ID: 2023492222
-- Course: ICT602- Mobile Technology
+- Course: ICT602- Mobile Technology and Development
 - Institution: Universiti Teknologi MARA, Shah Alam
 
 
