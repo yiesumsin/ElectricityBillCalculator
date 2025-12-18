@@ -53,6 +53,18 @@
         android:textColor="@color/gray_dark"
         android:visibility="gone"/>
 
+    <!-- Clear All Button (moved above Back Button) -->
+    <Button
+        android:id="@+id/clearAllButton"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="🗑️ CLEAR ALL HISTORY"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/red_dark"
+        android:visibility="gone"/>
+
     <!-- Back Button -->
     <Button
         android:id="@+id/backButton"

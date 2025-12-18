@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         saveButton = findViewById(R.id.saveButton);
         viewHistoryButton = findViewById(R.id.viewHistoryButton);
         aboutButton = findViewById(R.id.aboutButton);
-        clearButton = findViewById(R.id.clearButton);
+
 
         //set default radio selection
         RadioButton radio0 = findViewById(R.id.radio0);
@@ -161,12 +161,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        clearButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showClearConfirmationDialog();
-            }
-        });
 
         //set rebate selection listener
         rebateRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
