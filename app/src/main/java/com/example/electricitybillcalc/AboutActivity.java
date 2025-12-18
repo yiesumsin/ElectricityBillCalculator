@@ -38,7 +38,7 @@ public class AboutActivity extends AppCompatActivity {
         studentName.setText("Muhammad Syuhairy \nbin Mohd Hatta");
         studentId.setText("2023492222");
         courseCode.setText("ICT602");
-        courseName.setText("Mobile Technology");
+        courseName.setText("Mobile Technology and Development");
 
         //github link
         githubLink.setOnClickListener(new View.OnClickListener() {
