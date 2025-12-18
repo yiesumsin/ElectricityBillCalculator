@@ -44,7 +44,7 @@ public class AboutActivity extends AppCompatActivity {
         githubLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String githubUrl = "https://github.com/yiesumsin/ElectricityBillCalculator/";
+                String githubUrl = "https://github.com/yiesumsin/ElectricityBillCalculator";
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(githubUrl));
                 startActivity(intent);
             }
